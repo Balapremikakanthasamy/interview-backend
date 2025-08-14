@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Interviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f9f9f9;
+        }
+        h1 { text-align: center; }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+        }
+        tr:hover {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scheduled Interviews</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Created At</th>
+        </tr>
+        {% for interview in interviews %}
+        <tr>
+            <td>{{ interview.name }}</td>
+            <td>{{ interview.email }}</td>
+            <td>{{ interview.date }}</td>
+            <td>{{ interview.time }}</td>
+            <td>{{ interview.interview_type }}</td>
+            <td>{{ interview.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
