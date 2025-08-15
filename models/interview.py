@@ -1,11 +1,11 @@
-from app import db
+from extensions import db
 from datetime import datetime
 
 class Interview(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     candidate_name = db.Column(db.String(100), nullable=False)
     interviewer_name = db.Column(db.String(100), nullable=False)
-    interview_type = db.Column(db.String(50), nullable=False)  # Zoom, In-person, etc.
+    interview_type = db.Column(db.String(50), nullable=False)
     date = db.Column(db.Date, nullable=False)
     time = db.Column(db.Time, nullable=False)
     email = db.Column(db.String(120), nullable=False)
